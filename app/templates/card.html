@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка пропавшего</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+    <section class="header">
+        <div class="header_wrap">
+            <a href="/admin">Добрыня | Панель управления</a>
+        </div>
+    </section>
+    <section class="card">
+        <div class="card_wrapper">
+            <h1>Карточка пропавшего.</h1>
+            <p>Заявитель: {{user.r_fio}}</p>
+            <p>Номер телефона заявителя: <a href="tel:{{user.r_phone}}">{{user.r_phone}}</a></p>
+            <p>ФИО пропавшего: {{user.f_fio}}</p>
+            <p>Описание: {{user.f_description}}</p>
+            <p>Место: {{user.f_place}}</p>
+        </div>
+        <div class="card_actions">
+            <a href="/admin/card/setstatus/id={{user.id}}&status=1"><button>В работе</button></a>    
+            <a href="/admin/card/setstatus/id={{user.id}}&status=2"><button>Работа завершена</button></a>
+            <a href="/admin/card/delete/id={{user.id}}"><button>Удалить</button></a>
+        </div>
+    </section>
+</body>
+</html>

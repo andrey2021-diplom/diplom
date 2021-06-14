@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Admin</title>
+</head>
+
+<body>
+    <section class="header">
+        <div class="header_wrap">
+            <a href="/admin">Добрыня | Панель управления</a>
+        </div>
+    </section>
+
+    <section class="requests">
+        <div class="req_wrap">
+            {% for req in r %}
+            <div class="request">
+                <a href="/admin/card/id={{req.id}}">
+                    <p>{{req.f_fio}}</p>
+                </a>
+                <p>
+                    {% if req.status=='0' %}
+                        Новый
+                    {% elif req.status=='1' %}
+                        В работе
+                    {% elif req.status=='2' %}
+                        Работа завершена
+                    {% endif %}
+                </p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+</body>
+
+</html>

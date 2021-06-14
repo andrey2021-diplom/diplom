@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'Formular';
+    src: url('Formular.woff') format('woff');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Formular', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.section-100 {
+    display: block;
+    width: 100%;
+}
+
+.header {
+    height: 50px;
+    padding-left: 27px;
+    padding-right: 27px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background-color: black;
+    position: fixed;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.btn-100h {
+    height: 49px;
+    font-size: medium;
+    font-weight: 500;
+    margin-right: 5px;
+    background-color: black;
+    border-radius: 0.3rem;
+    border-width: 1px;
+    color: white;
+    border-color: gold;
+    border-style: solid;
+}
+
+.header_title {
+    font-size: x-large;
+    color: gold;
+}
+
+.header_right_phone {
+    padding-right: 30px;
+}
+
+.main {
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    z-index: 0;
+    background-image: url('lonelyforrest.jpg');
+
+}
+
+.main_wrapper {
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.f-white {
+    color: white;
+    font-kerning: normal;
+    letter-spacing: 3px;
+}
+
+.main_title {
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.main_description {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+.main_button {
+    height: 49px;
+    width: 200px;
+    font-size: large;
+    font-weight: 500;
+    margin-right: 5px;
+    background-color: transparent;
+    border-radius: 0.3rem;
+    border-width: 1px;
+    color: white;
+    border-color: gold;
+    padding: 0px 10px 0px 10px;
+    border-style: solid;
+}
+
+.request {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.request_title {
+    text-align: center;
+}
+
+.request_label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    text-shadow: 0 0 8px rgba(51, 51, 51, 0.342);
+}
+
+.request_input {
+    height: 32px;
+    width: 100%;
+    padding: 0 8px;
+    outline: none;
+    margin-top: 4px;
+}
+
+.request_input-textarea {
+    resize: none;
+    width: 100%;
+    padding: 0 8px;
+    margin-top: 4px;
+    outline: none;
+}
+
+.request_btn {
+    width: calc(100% + 18px);
+    background: #fff;
+    border: 1px solid #333;
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+.about {
+    border-bottom: 1px solid #333;
+}
+
+.about_wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.about_item {
+    font-size: large;
+    text-shadow: 0 0 15px #333;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.f_policy {
+    text-decoration: underline;
+    padding-left: 25px;
+}
+
+.f_year {
+    padding-right: 25px;
+}

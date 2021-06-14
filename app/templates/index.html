@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <title>Поисковый отряд Добрыня</title>
+</head>
+
+<body>
+
+    <section class='section-100 header'>
+
+        <div>
+            <p class="header_title">Добрыня</p>
+        </div>
+
+        <div class="header_right">
+
+            <div class="header_right_findrequest">
+                <a href="#request"><button class="header_right_findrequest_cx btn-100h">Заявка на поиск</button></a>
+            </div>
+
+            <div class="header_right_phone">
+                <a href="tel:8 800 700 54 52"><button class="header_right_phone_cx btn-100h"><i
+                            class="fa fa-phone"></i>8 800 700 54 52</button></a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section-100 main">
+        <div class="main_wrapper f-white">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="main_title">{{message}}</p>
+            {% endfor %}
+            {% else %}
+            <p class="main_title">Найдётся каждый!</p>
+            {% endif %}
+            {% endwith %}
+
+            <p class="main_description">Поисковый отряд "Добрыня" ищет людей, которые потерялись.</p>
+            <a href="#request"><button class="main_button">Найти человека</button></a> 
+        </div>
+    </section>
+
+    <section class="section-100 about">
+        <div class="about_wrapper">
+            <h2>О нас.</h2>
+            <div class="about_item">
+                <p>• Добрыня это волонтерское объединение, созданное с целью поиска пропавших людей в лесу, в городе или
+                    на воде.</p>
+            </div>
+            <div class="about_item">
+                <p>• Мы используем современное оборудование для поиска пропавших, среди него дроны, тепловизоры,
+                    эхолокаторы и др.</p>
+            </div>
+            <div class="about_item">
+                <p>• Поисковый отряд регулярно проводит информирование жителей о мерах предотвращения пропажи людей.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-100 request" id='request'>
+        <div class="main_wrapper">
+          <h2 class="request_title">Заявка на поиск.</h2>
+          <form action="/sendrequest" method="post" class="request_form">
+            <label class="request_label">Ваше ФИО
+              <input class="request_input"  type="text" name="r_fio" id="">
+            </label>
+            <label class="request_label">Ваш номер телефона
+              <input class="request_input" type="text" name="r_phone" id="">
+            </label>
+            <label class="request_label">ФИО пропавшего
+              <input class="request_input" type="text" name="f_fio" id="">
+            </label>
+    
+            <label class="request_label">Дата рождения пропавшего
+              <input class="request_input" type="date" name="f_dob" id="">
+            </label>
+            <label class="request_label">Опишите пропавшего
+              <!-- <input class="request_input" type="text" name="f_desc" id=""> -->
+              <textarea class="request_input-textarea" name="f_desc" cols="30" rows="10"></textarea>
+            </label>
+            <label class="request_label"> Опишите место где в последний раз видели пропавшего
+              <input class="request_input" type="text" name="f_place" id="">
+            </label>
+            <button type="submit" class="request_btn">Отправить заявку</button>
+          </form>
+        </div>
+      </section>
+
+    <section class="section-100">
+        <div class="footer">
+            <div class="f_policy"><a href="/policy">Политика конфиденциальности.</a></div>
+            <div class="f_year">2021</div>
+        </div>
+    </section>
+</body>
+
+</html>
